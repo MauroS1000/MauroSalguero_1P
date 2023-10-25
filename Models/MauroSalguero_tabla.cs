@@ -4,6 +4,7 @@ namespace MauroSalguero_1P.Models
 {
     public class MauroSalguero_tabla
     {
+        [Key]
         [Required(ErrorMessage = "Debe contener un nombre")]
         [Display(Name = "Nombre")]
         [RegularExpression(@"^[a-zA-Z0-9]*$", ErrorMessage = "Solo se aceptan caracteres alfanumericos")]

@@ -1,4 +1,9 @@
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using MauroSalguero_1P.Data;
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddDbContext<MauroSalguero_1PContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("MauroSalguero_1PContext") ?? throw new InvalidOperationException("Connection string 'MauroSalguero_1PContext' not found.")));
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
